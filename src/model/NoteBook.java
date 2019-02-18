@@ -12,7 +12,7 @@ public class NoteBook {
 
     }
 
-    public boolean addNewUser(UserData user){
+    public boolean addNewUser(UserData user) {
         if(users.containsKey(user.getUniqueName())){
             return false;
         }

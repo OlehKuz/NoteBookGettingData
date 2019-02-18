@@ -6,14 +6,27 @@ public class UserData {
     private String lastName;
     private String firstName;
     private String uniqueName;
-    private String email;
-    private List<Group> groups;
-    private String phoneNumber;
-    private String secondPhoneNumber;
+   // private String email;
+   // private List<Group> groups;
+   // private String phoneNumber;
+   // private String secondPhoneNumber;
 
     public UserData(){
 
     }
+
+    public UserData(UserData temp){
+
+            this.lastName = temp.getLastName();
+            this.firstName = temp.getFirstName();
+            this.uniqueName = temp.getUniqueName();
+          //  this.email = temp.getEmail();
+         //   this.groups = temp.getGroups();
+         //   this.phoneNumber = temp.getPhoneNumber();
+         //   if(temp.getSecondPhoneNumber() != null){
+         //       this.secondPhoneNumber = temp.getSecondPhoneNumber();
+            }
+
 
         public void setFirstName(String firstName) {
             this.firstName = firstName;
@@ -39,7 +52,7 @@ public class UserData {
             return uniqueName;
         }
 
-        public List<Group> getGroups() {
+       /* public List<Group> getGroups() {
             return groups;
         }
 
@@ -71,24 +84,22 @@ public class UserData {
 
         public String getEmail() {
             return email;
-        }
+        }*/
+    public String toString() {
+        return "User{" +
+                "lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", unique name='" + uniqueName + '\'' +
+                //", group=" + groups +
+                //", second phone # ='" + secondPhoneNumber + '\'' +
+                //", mobilePhone='" + phoneNumber + '\'' +
+                //", email='" + email + '\'' +
+
+                '}';
+    }
 }
 
 /*
 *
-    public UserData(UserData temp){
-        try{
-            this.lastName = temp.getLastName();
-            this.firstName = temp.getFirstName();
-            this.uniqueName = temp.getUniqueName();
-            this.email = temp.getEmail();
-            this.groups = temp.getGroups();
-            this.phoneNumber = temp.getPhoneNumber();
-            if(temp.getSecondPhoneNumber() != null){
-                this.secondPhoneNumber = temp.getSecondPhoneNumber();
-            }
-        }catch(NullPointerException e){
-            throw e;
-        }
-    }
+
 * */
