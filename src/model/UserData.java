@@ -1,9 +1,6 @@
 package model;
 
-import static view.ViewConstants.SPACE;
-
 import java.util.List;
-import java.util.ArrayList;
 
 public class UserData {
     private String lastName;
@@ -16,22 +13,6 @@ public class UserData {
 
     public UserData(){
 
-    }
-
-    public UserData(UserData temp){
-        try{
-            this.lastName = temp.getLastName();
-            this.firstName = temp.getFirstName();
-            this.uniqueName = temp.getUniqueName();
-            this.email = temp.getEmail();
-            this.groups = temp.getGroups();
-            this.phoneNumber = temp.getPhoneNumber();
-            if(temp.getSecondPhoneNumber() != null){
-                this.secondPhoneNumber = temp.getSecondPhoneNumber();
-            }
-        }catch(NullPointerException e){
-            throw e;
-        }
     }
 
         public void setFirstName(String firstName) {
@@ -84,11 +65,30 @@ public class UserData {
             return secondPhoneNumber;
         }
 
-        public String getEmail() {
-            return email;
-        }
-
         public void setEmail(String email) {
             this.email = email;
         }
+
+        public String getEmail() {
+            return email;
+        }
 }
+
+/*
+*
+    public UserData(UserData temp){
+        try{
+            this.lastName = temp.getLastName();
+            this.firstName = temp.getFirstName();
+            this.uniqueName = temp.getUniqueName();
+            this.email = temp.getEmail();
+            this.groups = temp.getGroups();
+            this.phoneNumber = temp.getPhoneNumber();
+            if(temp.getSecondPhoneNumber() != null){
+                this.secondPhoneNumber = temp.getSecondPhoneNumber();
+            }
+        }catch(NullPointerException e){
+            throw e;
+        }
+    }
+* */
