@@ -4,7 +4,6 @@ import model.UserData;
 import model.NoteBook;
 import view.View;
 import view.ViewConstants;
-import controller.Regex;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -24,6 +23,7 @@ public class ControllerGeneral {
         collectInfo(tempUser, sc);
         view.print(tempUser.toString());
         notebook.addNewUser(tempUser);
+        sc.close();
     }
 
     private void collectInfo(UserData tempUser, Scanner sc){
@@ -34,7 +34,7 @@ public class ControllerGeneral {
     }
 
     private String getValidInput(Scanner sc, String message, String regex){
-        String input = "";
+        String input;
         Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
         Matcher matcher;
         while(true){
