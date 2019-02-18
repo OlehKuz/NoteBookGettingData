@@ -1,12 +1,20 @@
 package controller;
 
-import static view.ViewConstants.SPACE;
+import view.ViewConstants;
+import controller.Regex;
+
+
 import static controller.Regex.REGEX_NAME_UKR;
+
 
 import model.UserData;
 import model.NoteBook;
 import view.View;
+import view.ViewConstants;
+
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ControllerGeneral {
     private NoteBook notebook;
@@ -28,4 +36,19 @@ public class ControllerGeneral {
 
     }
 
+    private String getValidInput(Scanner sc, String message, String regex){
+        String input;
+        Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
+        Matcher matcher;
+        while(true){
+            view.print(message);
+            input = sc.next();
+            matcher = pattern.matcher(input);
+            if(matcher.matches()) break;
+            else {
+                view.print(ViewConstants.WRONG_INPUT_DATA);
+            }
+        }
+        return input;
+    }
 }

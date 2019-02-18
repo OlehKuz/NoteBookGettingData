@@ -1,8 +1,6 @@
 package view;
 
-import static view.ViewConstants.INPUT_STRING_DATA;
 public class View {
-    public static final String SPACE = " ";
 
     public void print(String message) {
         System.out.println(message);
